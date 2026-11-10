@@ -1,0 +1,22 @@
+info:
+  name: Archive Job
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{urlEndpoint}}/api/external/ats/jobs/{id}/archive"
+  body:
+    type: json
+    data: |
+      {}
+  auth:
+    type: bearer
+    token: "{{apiToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

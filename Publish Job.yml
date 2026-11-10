@@ -1,0 +1,41 @@
+info:
+  name: Publish Job
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{urlEndpoint}}/api/external/ats/jobs"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "jobTitle": "Senior Symfony Engineer",
+          "jobCategory": "ICT / IT / Web",
+          "companyIndustry": "Engineering / Electronics / Mechanics",
+          "minimumQualificationLevel": "Certificate",
+          "minimumCareerLevel": "Manager",
+          "jobType": "Full-time",
+          "jobLocation": "Port Louis",
+          "salaryRange": "31,000 – 40,000",
+          "displaySalaryRange": true,
+          "displayCompanyName": true,
+          "jobDescription": "<p>We are looking for a Senior Software Engineer to join our growing team. You will be responsible for designing, developing, and maintaining high-quality software solutions. Strong experience with PHP, Symfony, and REST APIs is required.</p>",
+          "jobApplyLink": "https://careers.mycompany.com/apply/123",
+          "jobExpiryDays": 30
+      }
+  auth:
+    type: bearer
+    token: "{{apiToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

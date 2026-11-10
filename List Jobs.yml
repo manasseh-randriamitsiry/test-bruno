@@ -1,0 +1,33 @@
+info:
+  name: List Jobs
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{urlEndpoint}}/api/external/ats/jobs?page=1&itemsPerPage=20"
+  headers:
+    - name: Accept
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: itemsPerPage
+      value: "20"
+      type: query
+  auth:
+    type: bearer
+    token: "{{apiToken}}"
+
+runtime:
+  variables:
+    - name: apiToken
+      value: 37ec102bb4e334d07b206425e845d2f4a8f6f34c5505b516cda7eec2f7726399
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

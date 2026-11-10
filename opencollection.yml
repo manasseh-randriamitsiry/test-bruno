@@ -1,0 +1,20 @@
+opencollection: 1.0.0
+
+info:
+  name: MyJob External API
+
+request:
+  auth:
+    type: bearer
+    token: "{{auth_secret_1did}}"
+  variables:
+    - name: __urlEndpoints__
+      value: ""
+    - name: auth_secret_1did
+      value: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

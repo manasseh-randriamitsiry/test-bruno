@@ -1,0 +1,4 @@
+name: staging-endpoint
+variables:
+  - name: urlEndpoint
+    value: https://app-staging.myjob.mu
